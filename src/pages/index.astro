@@ -1,14 +1,20 @@
 ---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Historia from '../components/Historia.astro';
+import Destacados from '../components/Destacados.astro';
+import Sucursales from '../components/Sucursales.astro';
+import Eventos from '../components/Eventos.astro';
+import Footer from '../components/Footer.astro';
 ---
-
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  titulo="Carnitas Mamá Chuz — La Original desde 1980"
+  descripcion="Restaurante salvadoreño desde 1980. Carnitas, chorizo de tusa, mariscos y comida mexicana en San Salvador y Santa Tecla."
+>
+  <Hero />
+  <Historia />
+  <Destacados />
+  <Sucursales />
+  <Eventos />
+  <Footer />
+</Base>
