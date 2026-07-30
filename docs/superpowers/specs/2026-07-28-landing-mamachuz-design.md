@@ -110,10 +110,13 @@ si el jueves se define tipografía, hay un solo lugar donde tocar.
 
 ### Paletas
 
-Cuatro bloques `[data-palette="…"]` en el mismo archivo, todos partiendo de la dirección
-"Cantina cálida":
+Cuatro paletas en el mismo archivo, todas partiendo de la dirección "Cantina cálida". Son tres
+bloques `html[data-palette="…"]` más el `@theme`: la primera paleta **es** el default del
+`@theme` y no lleva selector propio, así que cada color se escribe una sola vez en el archivo.
+Cuando `data-palette` vale `pdf`, ninguna regla de paleta coincide y quedan los valores base.
 
-1. `pdf` — los colores exactos del menú actual. El punto de partida y la referencia.
+1. `pdf` — los colores exactos del menú actual. El punto de partida y la referencia. Vive en el
+   `@theme`, sin bloque propio.
 2. `crema` — más claro y aireado, menos madera, más blanco roto.
 3. `terracota` — el naranja corrido hacia rojo ladrillo, más tierra.
 4. `carbon` — fondo oscuro conservando el naranja. La opción nocturna dentro de la misma dirección.

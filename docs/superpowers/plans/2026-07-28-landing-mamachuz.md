@@ -4,9 +4,9 @@
 
 **Goal:** Construir una landing de vitrina de marca para Carnitas Mamá Chuz, con página de menú completa, cuya paleta de color entera se cambie editando un solo archivo o alternando en vivo desde un selector.
 
-**Architecture:** Sitio estático generado con Astro. El menú vive en `src/data/menu.json` y las páginas se generan desde ahí en tiempo de build. Todo el color se define como variables CSS en `src/styles/tokens.css`, expuestas a Tailwind v4 vía `@theme`; cuatro paletas alternativas se declaran como bloques `html[data-palette="…"]` que sobrescriben esas variables, lo que permite cambiar de paleta en el navegador sin recompilar.
+**Architecture:** Sitio estático generado con Astro. El menú vive en `src/data/menu.json` y las páginas se generan desde ahí en tiempo de build. Todo el color se define como variables CSS en `src/styles/tokens.css`, expuestas a Tailwind v4 vía `@theme`. Hay cuatro paletas: la primera es el default del `@theme` y las otras tres se declaran como bloques `html[data-palette="…"]` que sobrescriben esas variables, lo que permite cambiar de paleta en el navegador sin recompilar.
 
-**Tech Stack:** Astro 5, Tailwind CSS v4 (`@tailwindcss/vite`), Vitest para validación de datos y guardas de estilo, Node 24.
+**Tech Stack:** Astro 7.1.5, Tailwind CSS v4 (`@tailwindcss/vite`), Vitest 4 para validación de datos y guardas de estilo, Node 24.
 
 **Spec:** `docs/superpowers/specs/2026-07-28-landing-mamachuz-design.md`
 
@@ -1009,8 +1009,8 @@ describe('las cuatro paletas declaran los mismos tokens', () => {
     (m) => m[1],
   );
 
-  it('hay cuatro paletas más el bloque @theme', () => {
-    expect(bloques).toHaveLength(5);
+  it('hay tres bloques de paleta más el bloque @theme', () => {
+    expect(bloques).toHaveLength(4);
   });
 
   it('todas las paletas declaran el mismo conjunto de tokens de color', () => {
