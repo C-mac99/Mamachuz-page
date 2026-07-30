@@ -1,0 +1,45 @@
+{
+  "negocio": {
+    "nombre": "Carnitas Mamá Chuz",
+    "lema": "La Original",
+    "desde": 1980,
+    "correo": "carnitasmamachuz1980@gmail.com",
+    "propina": "Se aplica 10% de propina",
+    "pagos": ["Visa", "Mastercard"]
+  },
+  "eventos": {
+    "whatsapp": "50371715309",
+    "tipos": [
+      "Cumpleaños",
+      "Graduaciones",
+      "15 años",
+      "Eventos corporativos",
+      "Bodas"
+    ]
+  },
+  "redes": {
+    "instagram": "https://www.instagram.com/carnitasmamachuzoficial",
+    "facebook": "https://www.facebook.com/carnitasmamachuzoficial",
+    "tiktok": "https://www.tiktok.com/@carnitas.mama.chu"
+  },
+  "sucursales": [
+    {
+      "id": "5ta-avenida",
+      "nombre": "5ta Avenida Norte",
+      "direccion": "Pasaje Venecia, N° 1931",
+      "ciudad": "San Salvador",
+      "whatsapp": "50361801581",
+      "horario": null,
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Carnitas+Mam%C3%A1+Chuz+Pasaje+Venecia+San+Salvador"
+    },
+    {
+      "id": "paseo-el-carmen",
+      "nombre": "Paseo El Carmen",
+      "direccion": "7ª Avenida Norte y 1ª Calle Oriente, local 4-12 A. Frente al parqueo del Cafetalón",
+      "ciudad": "Santa Tecla, La Libertad",
+      "whatsapp": "50377849283",
+      "horario": null,
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Carnitas+Mam%C3%A1+Chuz+Paseo+El+Carmen+Santa+Tecla"
+    }
+  ]
+}
