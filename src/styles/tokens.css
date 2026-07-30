@@ -4,13 +4,23 @@
   --color-marca-suave: #6b5238;
   --color-acento: #e8922a;
   --color-acento-fuerte: #c8761a;
+  /* Tinta que va ENCIMA de una superficie de acento (botón primario). El acento es
+     un naranja de tono medio en las cuatro paletas, así que pide texto oscuro. Sin
+     este token cada componente adivinaba: el CTA del Hero ponía crema sobre naranja
+     y quedaba en 2.08:1. Mismo valor que texto -> 6.21:1 contra el acento. */
+  --color-sobre-acento: #2e2418;
   --color-fondo: #f5ebdd;
   --color-fondo-alt: #efe3d2;
   --color-superficie: #ffffff;
   --color-texto: #2e2418;
   --color-texto-suave: #6b5238;
   --color-linea: #ddd0bb;
-  --color-exito: #1f8a4c;
+  /* Verde oscurecido desde #1f8a4c. Con el anterior, el valor más contrastado de la
+     paleta (blanco) sólo llegaba a 4.377:1, por debajo de AA; con este llega a 5.34. */
+  --color-exito: #1f7a48;
+  /* Tinta que va ENCIMA de una superficie de éxito (botón de WhatsApp). Mismo valor
+     que superficie -> 5.34:1 contra el verde. */
+  --color-sobre-exito: #ffffff;
   --color-sombra: #3b2416;
 
   /* Tipografía */
@@ -27,13 +37,18 @@ html[data-palette='crema'] {
   --color-marca-suave: #7d6753;
   --color-acento: #e0872b;
   --color-acento-fuerte: #bf6d1c;
+  /* = texto -> 5.19:1 contra el acento (marca sólo daba 4.15) */
+  --color-sobre-acento: #33291f;
   --color-fondo: #fbf7f1;
   --color-fondo-alt: #f2ece2;
   --color-superficie: #ffffff;
   --color-texto: #33291f;
   --color-texto-suave: #6f6153;
   --color-linea: #e3dacd;
-  --color-exito: #1f8a4c;
+  /* Oscurecido desde #1f8a4c por el mismo motivo que en el bloque por defecto */
+  --color-exito: #1f7a48;
+  /* = superficie -> 5.34:1 contra el verde */
+  --color-sobre-exito: #ffffff;
   --color-sombra: #4a3627;
 }
 
@@ -42,6 +57,9 @@ html[data-palette='terracota'] {
   --color-marca-suave: #8a4a37;
   --color-acento: #c2451f;
   --color-acento-fuerte: #9c3416;
+  /* Acá el acento ya es un rojo-naranja oscuro, así que la tinta va al otro lado:
+     = superficie -> 5.04:1 contra el acento */
+  --color-sobre-acento: #ffffff;
   --color-fondo: #faf1e8;
   --color-fondo-alt: #f2e2d4;
   --color-superficie: #ffffff;
@@ -49,6 +67,8 @@ html[data-palette='terracota'] {
   --color-texto-suave: #6d4636;
   --color-linea: #e0cbb8;
   --color-exito: #1f7a48;
+  /* = superficie -> 5.34:1 contra el verde */
+  --color-sobre-exito: #ffffff;
   --color-sombra: #52251a;
 }
 
@@ -57,6 +77,9 @@ html[data-palette='carbon'] {
   --color-marca-suave: #c9b49f;
   --color-acento: #ff6b1a;
   --color-acento-fuerte: #ff8a3d;
+  /* En oscuro la tinta sobre el acento NO es texto (crema, 2.66:1) sino el fondo
+     casi negro: = fondo -> 6.76:1 contra el acento */
+  --color-sobre-acento: #140d08;
   --color-fondo: #140d08;
   --color-fondo-alt: #1f1610;
   --color-superficie: #241710;
@@ -64,5 +87,7 @@ html[data-palette='carbon'] {
   --color-texto-suave: #c9b49f;
   --color-linea: #3a2517;
   --color-exito: #35c47a;
+  /* = fondo -> 8.55:1 contra el verde claro de esta paleta */
+  --color-sobre-exito: #140d08;
   --color-sombra: #000000;
 }

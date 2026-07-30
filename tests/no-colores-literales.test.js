@@ -77,7 +77,7 @@ describe('las cuatro paletas declaran los mismos tokens', () => {
 
   it('todas las paletas declaran el mismo conjunto de tokens de color', () => {
     const base = tokensDe(bloques[0]);
-    expect(base.size).toBe(12);
+    expect(base.size).toBe(14);
     for (const bloque of bloques.slice(1)) {
       expect([...tokensDe(bloque)].sort()).toEqual([...base].sort());
     }

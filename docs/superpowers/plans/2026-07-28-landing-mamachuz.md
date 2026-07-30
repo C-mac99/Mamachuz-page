@@ -840,6 +840,12 @@ sobrescribir esa variable bajo `html[data-palette="…"]` repinta la página ent
 recompilar. Los selectores de paleta usan `html[…]` (especificidad 0,1,1) para ganarle
 al `:root` que emite `@theme` (0,1,0), sin depender del orden de las reglas.
 
+Dos de los tokens nombran un **rol** y no un color: `--color-sobre-acento` y `--color-sobre-exito`
+son la tinta que va encima de esas dos superficies. Existen porque `acento` y `exito` son tonos
+medios y desde el nombre no se puede saber si encima va tinta clara u oscura: sin ellos cada
+componente lo adivina, y adivina distinto. En cada paleta su valor reutiliza otro color de la
+misma paleta y contrasta ≥ 4.5:1 (WCAG AA) contra su propia superficie.
+
 ```css
 @theme {
   /* Paleta por defecto: los colores del PDF del menú 2025 */
@@ -847,13 +853,23 @@ al `:root` que emite `@theme` (0,1,0), sin depender del orden de las reglas.
   --color-marca-suave: #6b5238;
   --color-acento: #e8922a;
   --color-acento-fuerte: #c8761a;
+  /* Tinta que va ENCIMA de una superficie de acento (botón primario). El acento es
+     un naranja de tono medio en las cuatro paletas, así que pide texto oscuro. Sin
+     este token cada componente adivinaba: el CTA del Hero ponía crema sobre naranja
+     y quedaba en 2.08:1. Mismo valor que texto -> 6.21:1 contra el acento. */
+  --color-sobre-acento: #2e2418;
   --color-fondo: #f5ebdd;
   --color-fondo-alt: #efe3d2;
   --color-superficie: #ffffff;
   --color-texto: #2e2418;
   --color-texto-suave: #6b5238;
   --color-linea: #ddd0bb;
-  --color-exito: #1f8a4c;
+  /* Verde oscurecido desde #1f8a4c. Con el anterior, el valor más contrastado de la
+     paleta (blanco) sólo llegaba a 4.377:1, por debajo de AA; con este llega a 5.34. */
+  --color-exito: #1f7a48;
+  /* Tinta que va ENCIMA de una superficie de éxito (botón de WhatsApp). Mismo valor
+     que superficie -> 5.34:1 contra el verde. */
+  --color-sobre-exito: #ffffff;
   --color-sombra: #3b2416;
 
   /* Tipografía */
@@ -870,13 +886,18 @@ html[data-palette='crema'] {
   --color-marca-suave: #7d6753;
   --color-acento: #e0872b;
   --color-acento-fuerte: #bf6d1c;
+  /* = texto -> 5.19:1 contra el acento (marca sólo daba 4.15) */
+  --color-sobre-acento: #33291f;
   --color-fondo: #fbf7f1;
   --color-fondo-alt: #f2ece2;
   --color-superficie: #ffffff;
   --color-texto: #33291f;
   --color-texto-suave: #6f6153;
   --color-linea: #e3dacd;
-  --color-exito: #1f8a4c;
+  /* Oscurecido desde #1f8a4c por el mismo motivo que en el bloque por defecto */
+  --color-exito: #1f7a48;
+  /* = superficie -> 5.34:1 contra el verde */
+  --color-sobre-exito: #ffffff;
   --color-sombra: #4a3627;
 }
 
@@ -885,6 +906,9 @@ html[data-palette='terracota'] {
   --color-marca-suave: #8a4a37;
   --color-acento: #c2451f;
   --color-acento-fuerte: #9c3416;
+  /* Acá el acento ya es un rojo-naranja oscuro, así que la tinta va al otro lado:
+     = superficie -> 5.04:1 contra el acento */
+  --color-sobre-acento: #ffffff;
   --color-fondo: #faf1e8;
   --color-fondo-alt: #f2e2d4;
   --color-superficie: #ffffff;
@@ -892,6 +916,8 @@ html[data-palette='terracota'] {
   --color-texto-suave: #6d4636;
   --color-linea: #e0cbb8;
   --color-exito: #1f7a48;
+  /* = superficie -> 5.34:1 contra el verde */
+  --color-sobre-exito: #ffffff;
   --color-sombra: #52251a;
 }
 
@@ -900,6 +926,9 @@ html[data-palette='carbon'] {
   --color-marca-suave: #c9b49f;
   --color-acento: #ff6b1a;
   --color-acento-fuerte: #ff8a3d;
+  /* En oscuro la tinta sobre el acento NO es texto (crema, 2.66:1) sino el fondo
+     casi negro: = fondo -> 6.76:1 contra el acento */
+  --color-sobre-acento: #140d08;
   --color-fondo: #140d08;
   --color-fondo-alt: #1f1610;
   --color-superficie: #241710;
@@ -907,11 +936,13 @@ html[data-palette='carbon'] {
   --color-texto-suave: #c9b49f;
   --color-linea: #3a2517;
   --color-exito: #35c47a;
+  /* = fondo -> 8.55:1 contra el verde claro de esta paleta */
+  --color-sobre-exito: #140d08;
   --color-sombra: #000000;
 }
 ```
 
-Los cuatro bloques declaran **exactamente los mismos 12 tokens**. Si se agrega un token nuevo,
+Los cuatro bloques declaran **exactamente los mismos 14 tokens**. Si se agrega un token nuevo,
 va en los cuatro o la paleta que lo omita hereda el valor del `@theme` por defecto y se rompe
 visualmente. La Task 7 agrega un test que lo verifica.
 
@@ -1033,7 +1064,7 @@ describe('las cuatro paletas declaran los mismos tokens', () => {
 
   it('todas las paletas declaran el mismo conjunto de tokens de color', () => {
     const base = tokensDe(bloques[0]);
-    expect(base.size).toBe(12);
+    expect(base.size).toBe(14);
     for (const bloque of bloques.slice(1)) {
       expect([...tokensDe(bloque)].sort()).toEqual([...base].sort());
     }
@@ -1269,7 +1300,7 @@ const anios = new Date().getFullYear() - datos.negocio.desde;
     <div class="mt-8 flex flex-wrap gap-3">
       <a
         href="/menu"
-        class="rounded-boton bg-acento px-7 py-3 font-semibold text-fondo transition-colors hover:bg-acento-fuerte"
+        class="rounded-boton bg-acento px-7 py-3 font-semibold text-sobre-acento transition-colors hover:bg-acento-fuerte"
       >
         Ver el menú
       </a>
@@ -1468,7 +1499,7 @@ import { enlaceWhatsapp } from '../lib/whatsapp.js';
           <div class="mt-5 flex flex-wrap gap-3">
             <a
               href={enlaceWhatsapp(s.whatsapp, `Hola, quiero consultar por la sucursal ${s.nombre}.`)}
-              class="rounded-boton bg-exito px-5 py-2 text-sm font-semibold text-fondo"
+              class="rounded-boton bg-exito px-5 py-2 text-sm font-semibold text-sobre-exito"
             >
               WhatsApp
             </a>
@@ -1510,7 +1541,7 @@ const wa = enlaceWhatsapp(
     <p class="mt-5 text-fondo-alt">{datos.eventos.tipos.join(' · ')} y mucho más.</p>
     <a
       href={wa}
-      class="mt-8 inline-block rounded-boton bg-acento px-8 py-3 font-semibold text-marca transition-colors hover:bg-acento-fuerte"
+      class="mt-8 inline-block rounded-boton bg-acento px-8 py-3 font-semibold text-sobre-acento transition-colors hover:bg-acento-fuerte"
     >
       Cotizar por WhatsApp
     </a>
@@ -1637,7 +1668,7 @@ const { categoria } = Astro.props;
   <div class="flex flex-wrap items-baseline gap-3">
     <h2 class="text-3xl text-marca">{categoria.nombre}</h2>
     {categoria.nota && (
-      <span class="rounded-boton bg-acento px-3 py-1 text-xs font-semibold text-marca">
+      <span class="rounded-boton bg-acento px-3 py-1 text-xs font-semibold text-sobre-acento">
         {categoria.nota}
       </span>
     )}
@@ -1685,7 +1716,7 @@ import menu from '../lib/menu.js';
       <a
         href="/menu-2025.pdf"
         download
-        class="mt-6 inline-block rounded-boton bg-acento px-6 py-2.5 text-sm font-semibold text-marca"
+        class="mt-6 inline-block rounded-boton bg-acento px-6 py-2.5 text-sm font-semibold text-sobre-acento"
       >
         Descargar en PDF
       </a>
@@ -2010,7 +2041,8 @@ combinaciones alcanzan AA (4.5:1 en texto normal, 3:1 en texto grande):
 - `--color-texto` sobre `--color-fondo`
 - `--color-texto-suave` sobre `--color-fondo` y sobre `--color-fondo-alt`
 - `--color-marca` sobre `--color-fondo`
-- El texto de los botones sobre `--color-acento` y sobre `--color-exito`
+- `--color-sobre-acento` sobre `--color-acento` (el texto de los botones primarios)
+- `--color-sobre-exito` sobre `--color-exito` (el texto de los botones de WhatsApp)
 
 La paleta `carbon` es la de mayor riesgo. Si alguna combinación no llega, ajustar el valor en
 `tokens.css`; ningún componente cambia.

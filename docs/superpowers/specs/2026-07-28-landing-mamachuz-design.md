@@ -96,6 +96,7 @@ que sigan teniendo sentido cuando el jueves cambien los valores:
 | `--color-marca-suave` | Variante clara de la marca, para fondos de sección |
 | `--color-acento` | Naranja. Botones, precios destacados, la llama |
 | `--color-acento-fuerte` | Estado hover y foco del acento |
+| `--color-sobre-acento` | Tinta (texto e iconos) que va **encima** de una superficie de acento |
 | `--color-fondo` | Fondo general de la página |
 | `--color-fondo-alt` | Fondo de secciones alternas |
 | `--color-superficie` | Fondo de tarjetas |
@@ -103,7 +104,18 @@ que sigan teniendo sentido cuando el jueves cambien los valores:
 | `--color-texto-suave` | Descripciones, texto secundario |
 | `--color-linea` | Bordes y separadores |
 | `--color-exito` | Confirmaciones, WhatsApp |
+| `--color-sobre-exito` | Tinta (texto e iconos) que va **encima** de una superficie de éxito |
 | `--color-sombra` | Color base de las sombras |
+
+Son 14 tokens de color, y las cuatro paletas declaran exactamente el mismo conjunto: la prueba
+guarda `tests/no-colores-literales.test.js` lo verifica.
+
+Los dos tokens `sobre-…` existen porque `acento` y `exito` son tonos medios: no se puede saber
+desde el nombre si encima va tinta clara u oscura, y cada componente lo adivinaba distinto — el
+CTA principal del Hero llegó a quedar en 2.08:1 con la paleta `pdf`. El token nombra el rol
+("lo que va encima del acento"), así que sigue siendo correcto cuando el jueves cambien los
+valores: en `pdf`, `crema` y `carbon` resuelve a una tinta oscura y en `terracota` a una clara,
+y en las cuatro el contraste contra su propia superficie es ≥ 4.5:1 (WCAG AA).
 
 Los tamaños de tipografía, radios de borde y espaciados también viven acá, por la misma razón:
 si el jueves se define tipografía, hay un solo lugar donde tocar.
