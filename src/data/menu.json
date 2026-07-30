@@ -1,0 +1,261 @@
+{
+  "moneda": "USD",
+  "nota": "Se aplica 10% de propina",
+  "categorias": [
+    {
+      "id": "platos-del-dia",
+      "nombre": "Platos del día",
+      "nota": "Lunes a viernes, de 11:30 a.m. a 3:00 p.m.",
+      "items": [
+        { "nombre": "El de Carne", "precio": 4.00, "descripcion": "Carne, casamiento, chirimol, ensalada fresca, 2 tortillas + una soda.", "destacado": false, "imagen": null },
+        { "nombre": "El de Pollo", "precio": 4.00, "descripcion": "Pierna de pollo, chirimol, ensalada fresca, 2 tortillas + una soda.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "entradas",
+      "nombre": "Entradas",
+      "nota": null,
+      "items": [
+        { "nombre": "Alitas", "precio": 5.99, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Aros de Cebolla", "precio": 4.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Nachos", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Chicharrones", "precio": 6.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Dedos de queso", "precio": 4.99, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Pan con ajo", "precio": 1.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Pan con ajo y queso", "precio": 2.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Chilones", "precio": 2.99, "descripcion": "4 unidades.", "destacado": false, "imagen": null },
+        { "nombre": "Papas fritas", "precio": 3.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Cebollines", "precio": 2.29, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "carnes-clasicas",
+      "nombre": "Carnes clásicas",
+      "nota": null,
+      "items": [
+        { "nombre": "Plato con carne", "precio": 5.79, "descripcion": "Casamiento, ensalada fresca, chirimol y dos tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Plato con pollo", "precio": 5.79, "descripcion": "Casamiento, ensalada fresca y dos tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Plato con Chorizo", "precio": 5.79, "descripcion": "Dos chorizos argentinos, chirimol, ensalada fresca, casamiento y 2 tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Plato Mixto #1", "precio": 6.79, "descripcion": "Carne, chorizo argentino, chirimol, ensalada fresca, casamiento y dos tortillas.", "destacado": true, "imagen": null },
+        { "nombre": "Plato Mixto #2", "precio": 7.89, "descripcion": "Carne, chorizo argentino, huevo duro, casamiento, queso duro, chirimol y dos tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "El Choricero", "precio": 6.99, "descripcion": "6 chorizos de tuza, casamiento ó frijoles volteados, ensalada fresca, chirimol y 2 tortillas.", "destacado": true, "imagen": null },
+        { "nombre": "Plato Típico", "precio": 9.99, "descripcion": "Carne, chorizo argentino, queso, plátano, aguacate, frijoles fritos, chirimol, dos tortillas y ensalada fresca.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "picadas",
+      "nombre": "Las meras Picadas",
+      "nota": null,
+      "items": [
+        { "nombre": "Picada #1", "precio": 19.99, "descripcion": "Un delicioso azafatón combinado de alitas, dedos de queso, aros de cebolla y papas fritas.", "destacado": false, "imagen": null },
+        { "nombre": "Picada #2", "precio": 32.99, "descripcion": "El azafatón que combina los clásicos que amamos tanto: chorizos de tusa, alitas, chicharrones, papas fritas, 3 tortillas fritas ó tostadas y chirimol.", "destacado": true, "imagen": null }
+      ]
+    },
+    {
+      "id": "carnes-especiales",
+      "nombre": "Carnes especiales",
+      "nota": null,
+      "items": [
+        { "nombre": "Típico Mamá Chuz", "precio": 12.99, "descripcion": "Lomo de aguja, 1/2 aguacate, queso, plátano frito, ensalada fresca, frijoles fritos, chirimol y dos tortillas.", "destacado": true, "imagen": null },
+        { "nombre": "Costilla BBQ", "precio": 12.89, "descripcion": "1 libra de costillas + papas fritas.", "destacado": false, "imagen": null },
+        { "nombre": "Costilla de Cerdo", "precio": 12.89, "descripcion": "Casamiento, ensalada fresca y tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Puyazo Especial", "precio": 16.99, "descripcion": "Puyazo más 3 camarones a la plancha.", "destacado": false, "imagen": null },
+        { "nombre": "1/2 libra de Puyazo", "precio": 14.99, "descripcion": "Casamiento, chorizo, chirimol, ensalada fresca y dos tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Plato Combinado", "precio": 11.49, "descripcion": "1/4 de pollo y carne, casamiento, ensalada fresca, chirimol y dos tortillas.", "destacado": true, "imagen": null },
+        { "nombre": "Plato Especial", "precio": 12.69, "descripcion": "Carne, chorizo argentino, papa con 3 ingredientes, casamiento, quesito, huevo duro, cebollines, ensalada fresca y dos tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Punta Jalapeña", "precio": 16.99, "descripcion": "1/2 libra de lomo con ensalada, casamiento, salsa jalapeña y 2 tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Pechuga deshuesada", "precio": 12.69, "descripcion": "Casamiento, ensalada fresca, papa con un ingrediente y dos tortillas.", "destacado": true, "imagen": null }
+      ]
+    },
+    {
+      "id": "pal-familion",
+      "nombre": "Pal' Familión y la cherada",
+      "nota": null,
+      "items": [
+        { "nombre": "Tablazo Mamá Chuz", "precio": 39.99, "descripcion": "4 medias sopas de tortilla, 1 filete de pollo, 4 filetes de res, 10 chorizos de tusa y de complemento un clásico: casamiento de la casa, chirimol y tortillas tostadas.", "destacado": true, "imagen": null },
+        { "nombre": "Taquiza Mamá Chuz", "precio": 23.99, "descripcion": "10 tacos tradicionales (res, pollo ó mixtos), 1 torta tradicional (res, pollo ó mixta) más 1 soda de 1.25 litros gratis.", "destacado": false, "imagen": null },
+        { "nombre": "La Parrillada", "precio": 41.99, "descripcion": "4 chuletas de cerdo, dos cuartos de pollo, cuatro filetes de carne de res, 4 chorizos, casamiento, chirimol, ensalada fresca, dos panes con ajo ó 4 tortillas y una soda de 1.25 lt.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "platos-light",
+      "nombre": "Platos Light",
+      "nota": null,
+      "items": [
+        { "nombre": "Filete de carne", "precio": 5.79, "descripcion": "Con vegetales o ensalada fresca.", "destacado": false, "imagen": null },
+        { "nombre": "Ensalada César con pollo", "precio": 7.89, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Pechuga de pollo", "precio": 6.99, "descripcion": "Con vegetales o ensalada fresca.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "mariscos",
+      "nombre": "Mariscos",
+      "nota": null,
+      "items": [
+        { "nombre": "Camarones a la plancha", "precio": 17.24, "descripcion": "Casamiento, ensalada fresca, pan con ajo y papa al horno.", "destacado": false, "imagen": null },
+        { "nombre": "Camarones empanizados", "precio": 19.54, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Lonja de pescado", "precio": 13.79, "descripcion": "A la plancha ó al ajillo, casamiento y ensalada fresca.", "destacado": false, "imagen": null },
+        { "nombre": "Lonja empanizada", "precio": 14.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Orden de Camarones", "precio": 7.89, "descripcion": "Incluye 5 unidades.", "destacado": false, "imagen": null },
+        { "nombre": "Ceviche de camarón", "precio": 11.49, "descripcion": "Con jugo de limón ó jugo de tomate.", "destacado": false, "imagen": null },
+        { "nombre": "Cóctel de Camarones", "precio": 11.49, "descripcion": "En salsa rosada ó ceviche.", "destacado": true, "imagen": null }
+      ]
+    },
+    {
+      "id": "sopas",
+      "nombre": "Sopas",
+      "nota": "Solamente sábados y domingos",
+      "items": [
+        { "nombre": "Sopa de Gallina", "precio": 6.00, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "1/4 de Gallina", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "1/2 Sopa de Gallina", "precio": 4.00, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Combo 1/4 de Gallina", "precio": 9.99, "descripcion": "1/4 de gallina + media sopa.", "destacado": false, "imagen": null },
+        { "nombre": "Combo Familiar Gallina", "precio": 45.00, "descripcion": "Ensalada, casamiento, 4 cuartos de gallina, 4 medias sopas de gallina y soda de 1.5 lt.", "destacado": false, "imagen": null },
+        { "nombre": "Combo 4 Panes con Pollo", "precio": 26.99, "descripcion": "4 panes con pollo o gallina y soda de 1.5 lt.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "las-mexicanas",
+      "nombre": "Las mexicanas",
+      "nota": null,
+      "items": [
+        { "nombre": "Sopa de Tortilla", "precio": 5.79, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "1/2 Sopa de Tortilla", "precio": 3.59, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "tortas",
+      "nombre": "Tortas",
+      "nota": null,
+      "items": [
+        { "nombre": "Campechana", "precio": 6.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mexicana", "precio": 5.99, "descripcion": "Res ó pollo.", "destacado": false, "imagen": null },
+        { "nombre": "Alemana", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Hawaiana", "precio": 5.99, "descripcion": "Jamón y piña.", "destacado": false, "imagen": null },
+        { "nombre": "Mixta", "precio": 6.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Torta al pastor con piña", "precio": 7.89, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "burritos",
+      "nombre": "Burritos",
+      "nota": null,
+      "items": [
+        { "nombre": "Res", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Americano", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Picante", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mixto", "precio": 6.89, "descripcion": "Res y pollo.", "destacado": false, "imagen": null },
+        { "nombre": "Al pastor", "precio": 6.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mega Burro", "precio": 14.99, "descripcion": "45 cm. Res, pollo ó mixto.", "destacado": true, "imagen": null },
+        { "nombre": "Bacon Burrito", "precio": 7.99, "descripcion": null, "destacado": true, "imagen": null }
+      ]
+    },
+    {
+      "id": "tacos",
+      "nombre": "Tacos",
+      "nota": null,
+      "items": [
+        { "nombre": "Pancho Villa", "precio": 6.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Pastor", "precio": 7.19, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Alambre", "precio": 7.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mixtos", "precio": 6.89, "descripcion": "Res y pollo.", "destacado": false, "imagen": null },
+        { "nombre": "Res", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Pollo", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Tacos al pastor con piña", "precio": 7.89, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "quesadillas",
+      "nombre": "Quesadillas",
+      "nota": null,
+      "items": [
+        { "nombre": "La tradicional", "precio": 6.39, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Quesadilla con hongos", "precio": 6.39, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Quesadilla con cebollines", "precio": 6.39, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Sincronizadas", "precio": 7.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Gringas", "precio": 6.89, "descripcion": "Res, pollo, pastor ó mixtas.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "combos-mexicanos",
+      "nombre": "Combos mexicanos",
+      "nota": null,
+      "items": [
+        { "nombre": "Combo #1", "precio": 7.99, "descripcion": "3 tacos + 1/2 sopa de tortilla.", "destacado": false, "imagen": null },
+        { "nombre": "Combo #2", "precio": 7.99, "descripcion": "1 torta jr + 1/2 sopa de tortilla.", "destacado": false, "imagen": null },
+        { "nombre": "Combo #3", "precio": 9.99, "descripcion": "1 burrito + 1/2 sopa de tortilla.", "destacado": false, "imagen": null },
+        { "nombre": "Combo #4", "precio": 11.99, "descripcion": "1/2 torta jr + 2 tacos + 1/2 sopa de tortilla.", "destacado": false, "imagen": null },
+        { "nombre": "Combo #5", "precio": 12.99, "descripcion": "1 burrito + 2 tacos + 1/2 sopa de tortilla.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "papas-rellenas",
+      "nombre": "Papas rellenas",
+      "nota": "Queso | Aderezo | Ajo | Margarina",
+      "items": [
+        { "nombre": "Con 1 ingrediente", "precio": 2.59, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Con 2 ingredientes", "precio": 2.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Con 3 ingredientes", "precio": 2.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "La de Carnitas", "precio": 5.99, "descripcion": "La Extra Especial: carne de res + 3 ingredientes.", "destacado": false, "imagen": null },
+        { "nombre": "La de Carnitas con chorizo", "precio": 6.99, "descripcion": "La Extra Especial: carne y chorizo + 3 ingredientes.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "pa-cenar",
+      "nombre": "Pa' cenar",
+      "nota": null,
+      "items": [
+        { "nombre": "La Cenita Mamá Chuz", "precio": 6.00, "descripcion": "2 huevos estrellados ó picados, casamiento ó frijoles fritos, plátano y queso ó crema.", "destacado": true, "imagen": null }
+      ]
+    },
+    {
+      "id": "infantiles",
+      "nombre": "Infantiles y hamburguesas",
+      "nota": null,
+      "items": [
+        { "nombre": "Nuggets con papas", "precio": 5.99, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Pizza personal", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mito Burger", "precio": 5.99, "descripcion": "Hamburguesa sólo de carne de res sin vegetales.", "destacado": false, "imagen": null },
+        { "nombre": "Hamburguesa con papas", "precio": 6.99, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "La Mera Burger", "precio": 8.89, "descripcion": "Hamburguesa con 100% carne de res, tocino, jalapeño y papas francesas.", "destacado": false, "imagen": null },
+        { "nombre": "Chicken Burger", "precio": 8.79, "descripcion": "Carne de pollo, queso mozzarella, queso amarillo, aderezo ranch, vegetales, papas fritas o papa camote.", "destacado": false, "imagen": null },
+        { "nombre": "Pig Burger", "precio": 9.99, "descripcion": "Carne de cerdo, aderezo chipotle, queso amarillo, vegetales, tocino, papas fritas o papa camote.", "destacado": false, "imagen": null },
+        { "nombre": "La Mixta", "precio": 10.99, "descripcion": "Elegí 2 carnes entre res, pollo y cerdo. Aderezo ranch, chipotle y vegetales.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "panes",
+      "nombre": "Panes",
+      "nota": null,
+      "items": [
+        { "nombre": "Pan con Gallina ó pollo", "precio": 6.99, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Pan Mixto #1", "precio": 3.99, "descripcion": "Relleno de casamiento, chirimol y chorizo argentino.", "destacado": true, "imagen": null },
+        { "nombre": "Pan Mixto #2", "precio": 4.99, "descripcion": "Relleno de casamiento, chirimol y filete de carne.", "destacado": true, "imagen": null },
+        { "nombre": "Torta de Carne", "precio": 4.19, "descripcion": "Filete de carne + huevo.", "destacado": false, "imagen": null },
+        { "nombre": "El de casamiento", "precio": 2.99, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "extras",
+      "nombre": "Extras",
+      "nota": null,
+      "items": [
+        { "nombre": "Orden de queso", "precio": 1.99, "descripcion": "Queso rallado ó crema.", "destacado": false, "imagen": null },
+        { "nombre": "1/2 aguacate", "precio": 1.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "1/2 aguacate con aderezo", "precio": 2.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Orden de limón", "precio": 1.39, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Chiles Toreados", "precio": 2.69, "descripcion": "3 unidades.", "destacado": false, "imagen": null },
+        { "nombre": "Aderezo ó escabeche", "precio": 2.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Orden de plátano", "precio": 2.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Orden de hielo", "precio": 1.39, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Tortilla", "precio": 0.39, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Filete de carne de res", "precio": 3.69, "descripcion": "Dos tortillas y chirimol.", "destacado": false, "imagen": null },
+        { "nombre": "Filete de pollo", "precio": 4.29, "descripcion": "Dos tortillas y chirimol.", "destacado": false, "imagen": null },
+        { "nombre": "1/4 de pollo", "precio": 3.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Frijoles fritos ó casamiento", "precio": 2.99, "descripcion": "Más 2 tortillas.", "destacado": false, "imagen": null },
+        { "nombre": "Ensalada fresca", "precio": 5.99, "descripcion": "Con queso y aguacate.", "destacado": false, "imagen": null },
+        { "nombre": "Chorizo Extra", "precio": 1.99, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    }
+  ]
+}
