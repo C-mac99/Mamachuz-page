@@ -961,6 +961,14 @@ body {
 h1, h2, h3 {
   font-family: var(--font-titulo);
 }
+
+/* El reset de Tailwind v4 oculta [hidden] con `:where([hidden])`, especificidad 0,
+   así que cualquier utilidad de display le gana. El buscador del menú marca los
+   platos con el atributo `hidden` y los `.plato` llevan `flex`, con lo cual sin
+   esta regla no se ocultarían. */
+[hidden] {
+  display: none !important;
+}
 ```
 
 - [ ] **Step 3: Commit**
@@ -1799,7 +1807,7 @@ falla, el menú sigue completo y legible.
     autocomplete="off"
     class="w-full rounded-tarjeta border border-linea bg-superficie px-4 py-3 text-texto placeholder:text-texto-suave"
   />
-  <p id="sin-resultados" class="mt-3 hidden text-sm text-texto-suave">
+  <p id="sin-resultados" hidden class="mt-3 text-sm text-texto-suave">
     No encontramos ese plato. Probá con otra palabra.
   </p>
 </div>
@@ -1828,7 +1836,7 @@ falla, el menú sigue completo y legible.
       seccion.hidden = !algunoVisible;
     }
 
-    aviso.classList.toggle('hidden', visibles > 0);
+    aviso.hidden = visibles > 0;
   });
 </script>
 ```

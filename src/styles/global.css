@@ -10,3 +10,11 @@ body {
 h1, h2, h3 {
   font-family: var(--font-titulo);
 }
+
+/* El reset de Tailwind v4 oculta [hidden] con `:where([hidden])`, especificidad 0,
+   así que cualquier utilidad de display le gana. El buscador del menú marca los
+   platos con el atributo `hidden` y los `.plato` llevan `flex`, con lo cual sin
+   esta regla no se ocultarían. */
+[hidden] {
+  display: none !important;
+}

@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import MenuCategoria from '../components/MenuCategoria.astro';
+import MenuBuscador from '../components/MenuBuscador.astro';
 import Footer from '../components/Footer.astro';
 import menu from '../lib/menu.js';
 ---
@@ -35,6 +36,8 @@ import menu from '../lib/menu.js';
       ))}
     </div>
   </nav>
+
+  <MenuBuscador />
 
   <main class="mx-auto max-w-5xl px-6 pb-16">
     {menu.categorias.map((c) => <MenuCategoria categoria={c} />)}
