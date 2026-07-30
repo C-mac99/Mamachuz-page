@@ -256,6 +256,122 @@
         { "nombre": "Ensalada fresca", "precio": 5.99, "descripcion": "Con queso y aguacate.", "destacado": false, "imagen": null },
         { "nombre": "Chorizo Extra", "precio": 1.99, "descripcion": null, "destacado": false, "imagen": null }
       ]
+    },
+    {
+      "id": "bebidas-frias",
+      "nombre": "Bebidas frías",
+      "nota": null,
+      "items": [
+        { "nombre": "Jugo de naranja", "precio": 2.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Jugo de naranja con huevo", "precio": 3.49, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Jugo de naranja con zanahoria", "precio": 3.49, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Naranja con apio", "precio": 3.49, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Refresco de ensalada", "precio": 2.89, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Refresco de horchata", "precio": 2.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Refresco de tamarindo", "precio": 2.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Refresco de Jamaica", "precio": 2.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Limonada", "precio": 2.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Limonada con soda", "precio": 3.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Limonada Mamá Chuz", "precio": 3.49, "descripcion": "Hierba buena, rosa ó con pepino.", "destacado": false, "imagen": null },
+        { "nombre": "Licuados", "precio": 3.29, "descripcion": "Fresa, papaya, melón, zapote ó coco.", "destacado": false, "imagen": null },
+        { "nombre": "Frozen de limón", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Frozen de estación", "precio": 5.09, "descripcion": "Sandía, fresa, melón, papaya, piña ó coco.", "destacado": false, "imagen": null },
+        { "nombre": "Licuados Mixtos", "precio": 4.39, "descripcion": "Doble fruta.", "destacado": false, "imagen": null },
+        { "nombre": "Refrescos Dobles", "precio": 5.79, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "sodas",
+      "nombre": "Sodas y más",
+      "nota": null,
+      "items": [
+        { "nombre": "Agua en botella", "precio": 1.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Gaseosa", "precio": 1.89, "descripcion": "Vidrio o lata.", "destacado": false, "imagen": null },
+        { "nombre": "Té Lipton", "precio": 1.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Soda Familiar 3 litros", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Soda Familiar 2.5 litros", "precio": 3.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Soda Familiar 1.25 litros", "precio": 2.99, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "cervezas",
+      "nombre": "Cervezas",
+      "nota": null,
+      "items": [
+        { "nombre": "Pilsener", "precio": 1.99, "descripcion": "Nacional.", "destacado": false, "imagen": null },
+        { "nombre": "Golden", "precio": 1.99, "descripcion": "Nacional.", "destacado": false, "imagen": null },
+        { "nombre": "Regia", "precio": 4.89, "descripcion": "Nacional.", "destacado": false, "imagen": null },
+        { "nombre": "Corona", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Michelob Ultra", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Heineken", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Miller", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Modelo", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Stella Artois", "precio": 2.99, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Suprema", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null },
+        { "nombre": "Smirnoff Ice", "precio": 2.89, "descripcion": "Premium.", "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "micheladas",
+      "nombre": "Micheladas y mixes",
+      "nota": null,
+      "items": [
+        { "nombre": "Michelada Nacional", "precio": 3.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Michelada Extranjera", "precio": 4.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mix de Michelada", "precio": 2.79, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "cocteles",
+      "nombre": "Cócteles",
+      "nota": null,
+      "items": [
+        { "nombre": "Margarita", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Mojito", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Piña Colada", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Tequila", "precio": 5.99, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "baldes",
+      "nombre": "Baldes",
+      "nota": "6 unidades",
+      "items": [
+        { "nombre": "Pilsener", "precio": 11.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Golden y Extra", "precio": 11.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Corona", "precio": 16.79, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Suprema", "precio": 14.10, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Regia Chola", "precio": 14.99, "descripcion": "3 unidades.", "destacado": false, "imagen": null },
+        { "nombre": "Modelo", "precio": 16.79, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Miller", "precio": 14.99, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "bebidas-calientes",
+      "nombre": "Bebidas calientes",
+      "nota": null,
+      "items": [
+        { "nombre": "Té", "precio": 1.89, "descripcion": "Manzanilla, canela ó jamaica.", "destacado": false, "imagen": null },
+        { "nombre": "Café", "precio": 1.29, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Café con leche", "precio": 1.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Café con refill", "precio": 1.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Chocolate", "precio": 1.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Chocolate con leche", "precio": 2.49, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Leche", "precio": 1.89, "descripcion": null, "destacado": false, "imagen": null }
+      ]
+    },
+    {
+      "id": "postres",
+      "nombre": "Postres",
+      "nota": "Tardes dulces: por la compra de un postre llevate un café gratis",
+      "items": [
+        { "nombre": "Tres Leches", "precio": 3.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Pie de Limón", "precio": 3.89, "descripcion": null, "destacado": true, "imagen": null },
+        { "nombre": "Brownie a la moda", "precio": 3.89, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Cheesecake", "precio": 3.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Hojuelas con sorbete", "precio": 3.99, "descripcion": null, "destacado": false, "imagen": null },
+        { "nombre": "Pie de Chocolate", "precio": 3.89, "descripcion": null, "destacado": false, "imagen": null }
+      ]
     }
   ]
 }

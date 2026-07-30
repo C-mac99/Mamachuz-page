@@ -53,4 +53,15 @@ describe('menu.json', () => {
       expect(new Set(nombres).size).toBe(nombres.length);
     }
   });
+
+  it('tiene las 28 categorías del PDF', () => {
+    expect(menu.categorias).toHaveLength(28);
+  });
+
+  it('incluye las categorías de bebida', () => {
+    const ids = menu.categorias.map((c) => c.id);
+    for (const id of ['bebidas-frias', 'sodas', 'cervezas', 'micheladas', 'cocteles', 'baldes', 'bebidas-calientes', 'postres']) {
+      expect(ids).toContain(id);
+    }
+  });
 });
