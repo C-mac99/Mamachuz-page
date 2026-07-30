@@ -3,5 +3,7 @@ dist/
 .astro/
 .superpowers/
 .claude/
+dev-server.log
+dev-server.pid
 .env
 .DS_Store
