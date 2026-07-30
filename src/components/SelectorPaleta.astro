@@ -1,0 +1,58 @@
+---
+const visible = import.meta.env.PUBLIC_MOSTRAR_SELECTOR === 'true';
+const paletas = [
+  { id: 'pdf', nombre: 'PDF actual' },
+  { id: 'crema', nombre: 'Crema' },
+  { id: 'terracota', nombre: 'Terracota' },
+  { id: 'carbon', nombre: 'Carbón' },
+];
+---
+{visible && (
+  <div
+    id="selector-paleta"
+    class="fixed right-4 bottom-4 z-50 rounded-tarjeta border border-linea bg-superficie p-3 shadow-lg"
+  >
+    <p class="mb-2 text-xs font-semibold tracking-wider text-texto-suave uppercase">Paleta</p>
+    <div class="flex flex-col gap-1">
+      {paletas.map((p) => (
+        <button
+          type="button"
+          data-paleta={p.id}
+          class="rounded-boton px-3 py-1.5 text-left text-sm text-texto hover:bg-fondo-alt"
+        >
+          {p.nombre}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <script>
+    const CLAVE = 'mamachuz-paleta';
+    const raiz = document.documentElement;
+    const guardada = localStorage.getItem(CLAVE);
+    if (guardada) raiz.dataset.palette = guardada;
+
+    function marcarActiva() {
+      for (const boton of document.querySelectorAll('#selector-paleta button')) {
+        const activa = boton.dataset.paleta === raiz.dataset.palette;
+        boton.classList.toggle('bg-acento', activa);
+        boton.classList.toggle('font-bold', activa);
+        // El botón activo queda sobre una superficie de acento, así que su tinta
+        // tiene que ser la del token `sobre-acento`. Con `text-texto` encima del
+        // naranja el contraste cae a 2.66:1 en la paleta `carbon`.
+        boton.classList.toggle('text-sobre-acento', activa);
+        boton.classList.toggle('text-texto', !activa);
+      }
+    }
+
+    for (const boton of document.querySelectorAll('#selector-paleta button')) {
+      boton.addEventListener('click', () => {
+        raiz.dataset.palette = boton.dataset.paleta;
+        localStorage.setItem(CLAVE, boton.dataset.paleta);
+        marcarActiva();
+      });
+    }
+
+    marcarActiva();
+  </script>
+)}
