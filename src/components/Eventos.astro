@@ -1,0 +1,22 @@
+---
+import datos from '../data/sucursales.json';
+import { enlaceWhatsapp } from '../lib/whatsapp.js';
+
+const wa = enlaceWhatsapp(
+  datos.eventos.whatsapp,
+  'Hola, quiero cotizar un evento en Carnitas Mamá Chuz.',
+);
+---
+<section id="eventos" class="bg-marca px-6 py-20">
+  <div class="mx-auto max-w-4xl text-center">
+    <p class="text-xs tracking-[0.22em] text-acento uppercase">Reserva para eventos</p>
+    <h2 class="mt-3 text-4xl text-fondo">Celebremos juntos tus mejores momentos</h2>
+    <p class="mt-5 text-fondo-alt">{datos.eventos.tipos.join(' · ')} y mucho más.</p>
+    <a
+      href={wa}
+      class="mt-8 inline-block rounded-boton bg-acento px-8 py-3 font-semibold text-marca transition-colors hover:bg-acento-fuerte"
+    >
+      Cotizar por WhatsApp
+    </a>
+  </div>
+</section>

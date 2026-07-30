@@ -1,0 +1,24 @@
+---
+import datos from '../data/sucursales.json';
+---
+<footer class="bg-fondo-alt px-6 py-14">
+  <div class="mx-auto max-w-5xl">
+    <p class="text-2xl text-marca">{datos.negocio.nombre}</p>
+    <p class="mt-1 text-sm text-texto-suave">
+      {datos.negocio.lema} · Desde {datos.negocio.desde}
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-5 text-sm font-semibold text-marca">
+      <a href={datos.redes.instagram} target="_blank" rel="noopener">Instagram</a>
+      <a href={datos.redes.facebook} target="_blank" rel="noopener">Facebook</a>
+      <a href={datos.redes.tiktok} target="_blank" rel="noopener">TikTok</a>
+      <a href={`mailto:${datos.negocio.correo}`}>{datos.negocio.correo}</a>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-linea pt-6 text-sm text-texto-suave">
+      <span>{datos.negocio.propina}</span>
+      <span>Aceptamos {datos.negocio.pagos.join(' y ')}</span>
+      <a href="/menu-2025.pdf" download class="font-semibold text-marca">Descargar el menú en PDF</a>
+    </div>
+  </div>
+</footer>
