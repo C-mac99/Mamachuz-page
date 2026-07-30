@@ -6,6 +6,8 @@ const wa = enlaceWhatsapp(
   datos.eventos.whatsapp,
   'Hola, vi la página de Carnitas Mamá Chuz y quiero hacer una consulta.',
 );
+
+const anios = new Date().getFullYear() - datos.negocio.desde;
 ---
 <section class="bg-fondo-alt px-6 py-20 md:py-28">
   <div class="mx-auto max-w-5xl">
@@ -16,8 +18,7 @@ const wa = enlaceWhatsapp(
       La original,<br />desde siempre
     </h1>
     <p class="mt-6 max-w-xl text-lg text-texto-suave">
-      Carnitas, chorizo de tusa y casamiento como los hace la familia hace
-      {new Date().getFullYear() - datos.negocio.desde} años.
+      {`Carnitas, chorizo de tusa y casamiento como los hace la familia hace ${anios} años.`}
     </p>
     <div class="mt-8 flex flex-wrap gap-3">
       <a

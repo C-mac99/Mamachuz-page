@@ -1252,6 +1252,8 @@ const wa = enlaceWhatsapp(
   datos.eventos.whatsapp,
   'Hola, vi la página de Carnitas Mamá Chuz y quiero hacer una consulta.',
 );
+
+const anios = new Date().getFullYear() - datos.negocio.desde;
 ---
 <section class="bg-fondo-alt px-6 py-20 md:py-28">
   <div class="mx-auto max-w-5xl">
@@ -1262,8 +1264,7 @@ const wa = enlaceWhatsapp(
       La original,<br />desde siempre
     </h1>
     <p class="mt-6 max-w-xl text-lg text-texto-suave">
-      Carnitas, chorizo de tusa y casamiento como los hace la familia hace
-      {new Date().getFullYear() - datos.negocio.desde} años.
+      {`Carnitas, chorizo de tusa y casamiento como los hace la familia hace ${anios} años.`}
     </p>
     <div class="mt-8 flex flex-wrap gap-3">
       <a
@@ -1284,6 +1285,23 @@ const wa = enlaceWhatsapp(
 ```
 
 El cálculo de años usa el año actual, así que la página nunca dice "45 años" cuando ya son 46.
+
+**Cuidado con `compressHTML`.** Astro comprime el HTML en el build y borra el salto de línea entre
+un nodo de texto y una expresión `{…}` que empieza en la línea siguiente. Es decir, esto:
+
+```astro
+<p>
+  … como los hace la familia hace
+  {anios} años.
+</p>
+```
+
+sale como `hace46 años` en producción. `astro dev` **no** comprime, así que el error no aparece
+en desarrollo y solo se ve en el build. Por eso la frase va en una sola plantilla de texto. Regla
+para el resto de los componentes: si una expresión necesita un espacio antes, que el espacio esté
+dentro del mismo nodo de texto en la misma línea, o metela en un template literal. Un `{expr}` al
+principio de la línea seguido de texto (` años de brasa`) es seguro, porque el espacio queda del
+lado del texto.
 
 - [ ] **Step 3: Correr los tests**
 
