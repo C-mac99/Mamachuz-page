@@ -1,0 +1,45 @@
+---
+import datos from '../data/sucursales.json';
+const anios = new Date().getFullYear() - datos.negocio.desde;
+---
+<section id="historia" class="bg-fondo px-6 py-20">
+  <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-2 md:items-center">
+    <div>
+      <p class="text-xs tracking-[0.22em] text-acento uppercase">Nuestra historia</p>
+      <h2 class="mt-3 text-4xl leading-tight text-marca">{anios} años de brasa</h2>
+      <!-- TEXTO PROVISIONAL: reemplazar con el relato que entregue el cliente -->
+      <p class="mt-5 text-texto-suave">
+        Lo que empezó en 1980 como un puesto de carnitas hoy alimenta a tres generaciones
+        en dos sucursales. La receta no cambió: carne al fuego, casamiento de la casa y
+        chirimol hecho el mismo día.
+      </p>
+      <p class="mt-4 text-texto-suave">
+        Cada plato que sale de la cocina lleva el nombre de Mamá Chuz, y eso es lo que
+        cuidamos desde el primer día.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <img
+        data-placeholder="true"
+        src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=800&q=70"
+        alt="Interior del restaurante"
+        loading="lazy"
+        class="col-span-2 h-56 w-full rounded-tarjeta object-cover"
+      />
+      <img
+        data-placeholder="true"
+        src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=70"
+        alt="Carne a la parrilla"
+        loading="lazy"
+        class="h-40 w-full rounded-tarjeta object-cover"
+      />
+      <img
+        data-placeholder="true"
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=70"
+        alt="Plato servido en mesa"
+        loading="lazy"
+        class="h-40 w-full rounded-tarjeta object-cover"
+      />
+    </div>
+  </div>
+</section>

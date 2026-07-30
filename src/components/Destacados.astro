@@ -1,0 +1,30 @@
+---
+import { destacados, formatearPrecio } from '../lib/menu.js';
+const platos = destacados();
+---
+<section id="destacados" class="bg-fondo-alt px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    <p class="text-xs tracking-[0.22em] text-acento uppercase">Los que más piden</p>
+    <h2 class="mt-3 text-4xl text-marca">Nuestros destacados</h2>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {platos.map((plato) => (
+        <article class="flex flex-col rounded-tarjeta bg-superficie p-5 shadow-sm">
+          <p class="text-xs tracking-wider text-texto-suave uppercase">{plato.categoria}</p>
+          <h3 class="mt-2 text-xl text-marca">{plato.nombre}</h3>
+          {plato.descripcion && (
+            <p class="mt-2 flex-1 text-sm text-texto-suave">{plato.descripcion}</p>
+          )}
+          <p class="mt-4 text-2xl font-bold text-acento">{formatearPrecio(plato.precio)}</p>
+        </article>
+      ))}
+    </div>
+
+    <a
+      href="/menu"
+      class="mt-10 inline-block rounded-boton bg-marca px-7 py-3 font-semibold text-fondo transition-colors hover:bg-marca-suave"
+    >
+      Ver el menú completo
+    </a>
+  </div>
+</section>
