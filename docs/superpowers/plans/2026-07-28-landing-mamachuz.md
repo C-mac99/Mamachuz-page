@@ -955,10 +955,13 @@ componente, la paleta deja de ser intercambiable y hay que descubrirlo automáti
 
 ```javascript
 import { describe, it, expect } from 'vitest';
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 function archivosEn(dir, ext) {
+  // src/layouts todavía no existe (lo crea la Task 9). Una carpeta ausente no es
+  // un error; cualquier otro fallo de lectura sí debe reventar la prueba.
+  if (!existsSync(dir)) return [];
   const salida = [];
   for (const nombre of readdirSync(dir)) {
     const ruta = join(dir, nombre);
@@ -970,8 +973,18 @@ function archivosEn(dir, ext) {
 
 const HEX = /#[0-9a-fA-F]{3,8}\b/;
 const FUNCION_COLOR = /\b(rgba?|hsla?|oklch|color-mix)\s*\(/;
+
+// `white` y `black` no llevan sufijo numérico, así que necesitan su propia rama.
+// Son literales duros en Tailwind: no cambian con la paleta, y con `carbon`
+// (fondo casi negro) un `bg-white` suelto es justo el bug que aparece proyectado.
+// Los tokens correctos son `superficie` y `texto`.
 const TAILWIND_POR_DEFECTO =
-  /\b(bg|text|border|from|to|via|ring|outline|decoration|shadow)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3}\b/;
+  /\b(bg|text|border|from|to|via|ring|outline|decoration|shadow)-(?:(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3}|white|black)\b/;
+
+// Colores CSS con nombre en estilos en línea (`style="color: tomato"`). Se permiten
+// las palabras clave que no fijan un color: var(), inherit, currentColor, etc.
+const COLOR_NOMBRADO =
+  /(?:^|[;"'\s])(?:color|background|background-color|border-color|fill|stroke)\s*:\s*(?!var\(|inherit|currentColor|transparent|none|unset|initial|revert)[a-zA-Z]+/;
 
 describe('ningún componente escribe color literal', () => {
   const fuentes = [
@@ -994,6 +1007,11 @@ describe('ningún componente escribe color literal', () => {
     it(`${ruta} no usa la paleta por defecto de Tailwind`, () => {
       const texto = readFileSync(ruta, 'utf8');
       expect(TAILWIND_POR_DEFECTO.test(texto), `color de Tailwind en ${ruta}`).toBe(false);
+    });
+
+    it(`${ruta} no usa colores CSS con nombre`, () => {
+      const texto = readFileSync(ruta, 'utf8');
+      expect(COLOR_NOMBRADO.test(texto), `color con nombre en ${ruta}`).toBe(false);
     });
   }
 });
