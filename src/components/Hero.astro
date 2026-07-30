@@ -1,6 +1,37 @@
 ---
----
+import datos from '../data/sucursales.json';
+import { enlaceWhatsapp } from '../lib/whatsapp.js';
 
-<section class="bg-fondo text-texto">
-  <h1>Carnitas Mamá Chuz</h1>
+const wa = enlaceWhatsapp(
+  datos.eventos.whatsapp,
+  'Hola, vi la página de Carnitas Mamá Chuz y quiero hacer una consulta.',
+);
+---
+<section class="bg-fondo-alt px-6 py-20 md:py-28">
+  <div class="mx-auto max-w-5xl">
+    <p class="text-xs tracking-[0.22em] text-marca-suave uppercase">
+      La Original · Desde {datos.negocio.desde}
+    </p>
+    <h1 class="mt-4 text-5xl leading-none text-marca md:text-7xl">
+      La original,<br />desde siempre
+    </h1>
+    <p class="mt-6 max-w-xl text-lg text-texto-suave">
+      Carnitas, chorizo de tusa y casamiento como los hace la familia hace
+      {new Date().getFullYear() - datos.negocio.desde} años.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="/menu"
+        class="rounded-boton bg-acento px-7 py-3 font-semibold text-fondo transition-colors hover:bg-acento-fuerte"
+      >
+        Ver el menú
+      </a>
+      <a
+        href={wa}
+        class="rounded-boton border border-marca px-7 py-3 font-semibold text-marca transition-colors hover:bg-marca hover:text-fondo"
+      >
+        Escribinos
+      </a>
+    </div>
+  </div>
 </section>
