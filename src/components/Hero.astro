@@ -11,10 +11,18 @@ const anios = new Date().getFullYear() - datos.negocio.desde;
 ---
 <section class="bg-fondo-alt px-6 py-20 md:py-28">
   <div class="mx-auto max-w-5xl">
+    <img
+      src="/img/logo.png"
+      alt={datos.negocio.nombre}
+      width="447"
+      height="447"
+      fetchpriority="high"
+      class="mb-8 h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40"
+    />
     <p class="text-xs tracking-[0.22em] text-marca-suave uppercase">
       La Original · Desde {datos.negocio.desde}
     </p>
-    <h1 class="mt-4 text-5xl leading-none text-marca md:text-7xl">
+    <h1 class="mt-4 text-4xl leading-none text-marca sm:text-5xl md:text-7xl">
       La original,<br />desde siempre
     </h1>
     <p class="mt-6 max-w-xl text-lg text-texto-suave">

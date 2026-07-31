@@ -11,6 +11,60 @@ h1, h2, h3 {
   font-family: var(--font-titulo);
 }
 
+/* Los enlaces del nav de categorías apuntan a anclas; el desplazamiento suave hace
+   evidente que la página se movió y a dónde. Se respeta a quien pidió menos
+   movimiento en el sistema operativo. */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Barras de desplazamiento con los tokens de la paleta, para que no aparezca la
+   barra gris del sistema encima de la madera. Firefox usa las propiedades
+   estándar; Chrome y Safari necesitan los pseudoelementos. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-linea) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-linea);
+  border-radius: var(--radius-boton);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-marca-suave);
+}
+
+/* El nav de categorías se desplaza en horizontal y su barra es la única pista de
+   que hay más categorías a la derecha, así que va con más presencia que el resto. */
+.nav-categorias {
+  scrollbar-color: var(--color-marca-suave) transparent;
+  padding-bottom: 0.5rem;
+}
+
+.nav-categorias::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-categorias::-webkit-scrollbar-thumb {
+  background-color: var(--color-marca-suave);
+}
+
 /* El reset de Tailwind v4 oculta [hidden] con `:where([hidden])`, especificidad 0,
    así que cualquier utilidad de display le gana. El buscador del menú marca los
    platos con el atributo `hidden` y los `.plato` llevan `flex`, con lo cual sin

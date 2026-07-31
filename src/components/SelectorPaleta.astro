@@ -8,32 +8,50 @@ const paletas = [
 ];
 ---
 {visible && (
-  <div
-    id="selector-paleta"
-    class="fixed right-4 bottom-4 z-50 rounded-tarjeta border border-linea bg-superficie p-3 shadow-lg"
-  >
-    <p class="mb-2 text-xs font-semibold tracking-wider text-texto-suave uppercase">Paleta</p>
-    <div class="flex flex-col gap-1">
-      {paletas.map((p) => (
-        <button
-          type="button"
-          data-paleta={p.id}
-          class="rounded-boton px-3 py-1.5 text-left text-sm text-texto hover:bg-fondo-alt"
-        >
-          {p.nombre}
-        </button>
-      ))}
+  <div id="selector-paleta" class="fixed right-4 bottom-4 z-50 flex flex-col items-end gap-2">
+    <div
+      id="selector-panel"
+      hidden
+      class="rounded-tarjeta border border-linea bg-superficie p-3 shadow-lg"
+    >
+      <p class="mb-2 text-xs font-semibold tracking-wider text-texto-suave uppercase">Paleta</p>
+      <div class="flex flex-col gap-1">
+        {paletas.map((p) => (
+          <button
+            type="button"
+            data-paleta={p.id}
+            class="rounded-boton px-4 py-2 text-left text-sm text-texto hover:bg-fondo-alt"
+          >
+            {p.nombre}
+          </button>
+        ))}
+      </div>
     </div>
+
+    <button
+      id="selector-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="selector-panel"
+      class="flex h-12 w-12 items-center justify-center rounded-boton border border-linea bg-superficie text-xl shadow-lg"
+    >
+      <span aria-hidden="true">🎨</span>
+      <span class="sr-only">Cambiar paleta de colores</span>
+    </button>
   </div>
 
   <script>
     const CLAVE = 'mamachuz-paleta';
     const raiz = document.documentElement;
+    const panel = document.getElementById('selector-panel');
+    const toggle = document.getElementById('selector-toggle');
+    const botones = document.querySelectorAll('#selector-panel button');
+
     const guardada = localStorage.getItem(CLAVE);
     if (guardada) raiz.dataset.palette = guardada;
 
     function marcarActiva() {
-      for (const boton of document.querySelectorAll('#selector-paleta button')) {
+      for (const boton of botones) {
         const activa = boton.dataset.paleta === raiz.dataset.palette;
         boton.classList.toggle('bg-acento', activa);
         boton.classList.toggle('font-bold', activa);
@@ -45,7 +63,14 @@ const paletas = [
       }
     }
 
-    for (const boton of document.querySelectorAll('#selector-paleta button')) {
+    // Arranca plegado para no tapar el contenido, sobre todo en celular.
+    toggle.addEventListener('click', () => {
+      const abierto = !panel.hidden;
+      panel.hidden = abierto;
+      toggle.setAttribute('aria-expanded', String(!abierto));
+    });
+
+    for (const boton of botones) {
       boton.addEventListener('click', () => {
         raiz.dataset.palette = boton.dataset.paleta;
         localStorage.setItem(CLAVE, boton.dataset.paleta);

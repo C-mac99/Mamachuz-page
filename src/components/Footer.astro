@@ -3,10 +3,21 @@ import datos from '../data/sucursales.json';
 ---
 <footer class="bg-fondo-alt px-6 py-14">
   <div class="mx-auto max-w-5xl">
-    <p class="text-2xl text-marca">{datos.negocio.nombre}</p>
-    <p class="mt-1 text-sm text-texto-suave">
-      {datos.negocio.lema} · Desde {datos.negocio.desde}
-    </p>
+    <div class="flex items-center gap-4">
+      <img
+        src="/img/logo.png"
+        alt=""
+        width="447"
+        height="447"
+        class="h-16 w-16 shrink-0"
+      />
+      <div>
+        <p class="text-2xl text-marca">{datos.negocio.nombre}</p>
+        <p class="mt-1 text-sm text-texto-suave">
+          {datos.negocio.lema} · Desde {datos.negocio.desde}
+        </p>
+      </div>
+    </div>
 
     <div class="mt-6 flex flex-wrap gap-5 text-sm font-semibold text-marca">
       <a href={datos.redes.instagram} target="_blank" rel="noopener">Instagram</a>

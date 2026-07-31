@@ -50,6 +50,15 @@ Los datos del negocio, sucursales y redes están en `src/data/sucursales.json`. 
 WhatsApp se guardan como `503` + 8 dígitos, sin `+` ni espacios; `src/lib/whatsapp.js` rechaza
 cualquier otro formato.
 
+## Logo
+
+`public/img/logo.png` — PNG de 447×447 con transparencia real. Se usa en el hero, en el
+encabezado del menú, en el footer y como favicon.
+
+El interior de la insignia es claro y opaco, así que se lee igual sobre las paletas claras y
+sobre `carbon`. Si algún día se reemplaza por una versión sin relleno, hay que revisarlo sobre
+fondo oscuro antes de subirlo.
+
 ## Fotos
 
 Las imágenes actuales son de stock y están marcadas con `data-placeholder="true"`.
