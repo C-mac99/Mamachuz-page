@@ -15,6 +15,23 @@ y el texto de la historia se definen en la reunión con el cliente.
 
 Requiere Node ≥ 22.12.
 
+## Verlo desde el celular en la red local
+
+`dev` y `preview` arrancan con `--host`, así que además de `localhost` imprimen una URL de red
+del tipo `http://192.168.x.x:4321/`. Cualquier dispositivo en el mismo Wi-Fi la abre — útil para
+probar el menú como lo va a ver alguien que escanea el QR.
+
+Si el celular no conecta, casi siempre es una de tres:
+
+- El firewall de Windows no deja pasar `node.exe` en el perfil de red activo.
+- El router tiene aislamiento de clientes (*AP isolation*) y no deja que dos dispositivos del
+  mismo Wi-Fi se vean.
+- La PC está en una red y el celular en otra (por ejemplo, PC por cable y celular en la red de
+  invitados).
+
+La IP cambia cuando cambia la red, así que no sirve para un QR impreso: para eso hace falta el
+dominio definitivo.
+
 ## Cambiar los colores
 
 Todo el color vive en `src/styles/tokens.css`. Son 14 tokens y cuatro paletas: `pdf` (la del menú
